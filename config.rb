@@ -38,7 +38,7 @@
 ###
 
 # Automatic image dimensions on image_tag helper
-# activate :automatic_image_sizes
+activate :automatic_image_sizes
 
 # Methods defined in the helpers block are available in templates
 # helpers do
@@ -52,6 +52,8 @@ set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 
 set :images_dir, 'images'
+
+activate :directory_indexes
 
 # Build-specific configuration
 configure :build do
