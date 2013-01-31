@@ -1,0 +1,82 @@
+@mixin background($from, $to){
+  background-color: $from;
+
+  /* Firefox 3.6+ */
+  background: -moz-linear-gradient($from, $to);
+
+  /* Safari 4+, Chrome 1+ */
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($from), to($to));
+
+  /* Safari 5.1+, Chrome 10+ */
+  background: -webkit-linear-gradient($from, $to);
+
+  /* Opera 11.10+ */
+  background: -o-linear-gradient($from, $to);
+}
+
+@mixin background_horizontal($from, $to){
+  background-color: $from;
+
+  /* Firefox 3.6+ */
+  background: -moz-linear-gradient(left, $from, $to);
+
+  /* Safari 4+, Chrome 1+ */
+  background: -webkit-gradient(linear, left top, right top, from($from), to($to));
+
+  /* Safari 5.1+, Chrome 10+ */
+  background: -webkit-linear-gradient(left, $from, $to);
+
+  /* Opera 11.10+ */
+  background: -o-linear-gradient(left, $from, $to);
+}
+
+@mixin keyframe ($animation_name) {
+    @-webkit-keyframes $animation_name {
+        @content;
+    }
+
+    @-moz-keyframes $animation_name {
+        @content;
+    }
+
+    @-o-keyframes $animation_name {
+        @content;
+    }
+
+    @keyframes $animation_name {
+        @content;
+    }
+}
+
+@mixin animation ($animation, $duration) {
+    -webkit-animation-duration: $duration;
+    -webkit-animation-name: $animation;
+    -webkit-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+
+    -moz-animation-duration: $duration;
+    -moz-animation-name: $animation;
+    -moz-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+
+    -o-animation-duration: $duration;
+    -o-animation-name: $animation;
+    -o-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+
+    animation-duration: $duration;
+    animation-name: $animation;
+    animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+}
+
+@mixin browsers($property, $value){
+	-webkit-#{$property}: $value;
+	-moz-#{$property}: $value;
+	-o-#{$property}: $value;
+	#{$property}: $value;
+}
+
+@mixin transition_transforms($duration){
+	-webkit-transition: -webkit-transform #{$duration};
+	-moz-transition: -moz-transform #{$duration};
+	-o-transition: -o-transform #{$duration};
+	transition: transform #{$duration};
+}
+

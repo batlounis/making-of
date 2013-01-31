@@ -1,0 +1,63 @@
+!!!
+%html
+	%head
+		%meta{'http-equiv' => 'Content-Type', :content => 'text/html', :charset => 'utf-8'}
+		%meta{:name=>'viewport', :content=>'initial-scale=1.0, user-scalable=no'}
+		%title= "Making Of " + data.page.title
+		%meta{:property=>'og:title', :content=>(data.page.title ? data.page.title+" - " : "") +  "Making Of"}
+		%meta{:name=>'author', :content=>'Salim Batlouni'}
+		- if current_page.path == 'index.html'
+			%meta{:property=>'og:image', :content=>"/#{image_path('makingof.jpg')}"}
+		- else
+			%meta{:property=>'og:image', :content=>"/#{image_path(current_page.data['title'].parameterize+'.jpg')}"}
+		- if data.page.description
+			%meta{:property=>'description', :content=>data.page.description}
+			%meta{:property=>'og:description', :content=>data.page.description}
+		= stylesheet_link_tag "normalize", "all"
+		- if build?
+			:javascript
+				var _gaq = _gaq || [];
+				var pluginUrl = 
+				 '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+				_gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+				_gaq.push(['_setAccount', 'UA-38077085-1']);
+				_gaq.push(['_trackPageview']);
+
+				(function() {
+					var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+					ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+					var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+				 })();
+   
+	%body{:class=>"#{page_classes}"}
+	
+		%header
+			#menu
+				%a{:href=>'http://www.batlounis.com', :target=>'_blank'} my work
+			#title
+				%h1
+					= link_to "Making Of", '/', :unless=>:current
+				- if data.page.title
+					%h2= data.page.title
+		
+		%p.intro= data.page.description
+		
+		=yield
+		
+		
+		%footer#contact
+			= image_tag 'salim.png', :alt=>'Salim Batlouni'
+			%div Salim Batlouni
+			%div batlounis@gmail.com
+			%div +1 812 827 2546
+			.social
+				%a{:href=>"http://vimeo.com/batlounis", :title=>"Salim's Vimeo", :target=>"_blank"}
+					= image_tag 'social/vimeo.jpg'
+				%a{:href=>"http://pinterest.com/batlounis/", :title=>"Salim's Pinterest", :target=>"_blank"}
+					= image_tag 'social/pinterest.png'
+				%a{:href=>"http://www.facebook.com/batlounis", :title=>"Salim's Facebook", :target=>"_blank"}
+					= image_tag 'social/facebook.png'
+				%a{:href=>"http://pt.linkedin.com/in/batlounis", :title=>"Salim's LinkedIn", :target=>"_blank"}
+					= image_tag 'social/linkedin.jpg'
+				%a{:href=>"http://www.behance.net/batlounis", :title=>"Salim's Behance", :target=>"_blank"}
+					= image_tag 'social/behance.jpg'

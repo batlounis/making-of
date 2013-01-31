@@ -1,0 +1,181 @@
+@import "mixins";
+@import "media_queries";
+
+@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow|Vollkorn);
+
+body{
+	font-family: 'PT Sans Narrow', sans-serif;
+	text-transform: uppercase;
+	max-width: 60em;
+	margin: auto;
+}
+
+p{
+	font-family: 'Vollkorn', serif;
+	text-transform: none;
+	max-width: 22em;
+	margin: auto;
+	font-size: 1.2em;
+	padding: .5em 1em;
+	position: relative;
+	
+	&.intro{
+		margin-top: .5em;
+		font-size: 1.5em;
+		margin-bottom: 2em;
+		text-align: center;
+		font-family: 'PT Sans Narrow', sans-serif;
+				
+		&:after{
+			content: '';
+			width: 20%;
+			border-bottom: solid 3px rgba(black, 1);
+			position: absolute;
+			bottom: 0;
+			left: 40%;
+		}
+	}
+}
+
+a{
+	color: black;
+	text-decoration: underline;
+	letter-spacing: .05em;
+}
+
+header, footer{
+	text-align: center;
+	clear: both;
+}
+
+footer{
+	margin-top: 2em;
+}
+
+h1, h1 a{
+	text-decoration: none;
+	color: black;
+	font-size: 4.5rem;
+	letter-spacing: -.03em;
+	word-spacing: .1em;
+	margin: 0;
+	padding: 0;
+	line-height: .8em;
+}
+
+h2{
+	margin: 0;
+	padding: 0;
+	line-height: 1em;
+	text-align: right;
+	font-size: 2.5rem;
+}
+
+#title{
+	display: table;
+	margin: auto;
+}
+
+#menu{
+	text-align: right;
+	margin-right: 1em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	font-size: 1.2rem;
+	text-transform: none;
+	
+	a{
+		margin-right: .5em;
+	}
+	
+	a:last-child{
+		margin-right: 0;
+	}
+}
+
+
+section{
+	width: 100%;
+	margin: 2em auto 4em auto;
+	clear: both;
+	float: none;
+	display: table;
+	text-align: center;
+	
+	a.linked_image{
+		position: relative;
+		display: table;
+		margin: auto;
+		
+		&:hover:after{
+			content: 'open full image';
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: block;
+			padding: .2em;
+			margin: .5em;
+			background: white;
+			color: black;
+			letter-spacing: .1em;
+			border-radius: .3em;
+		}
+		
+		img{
+			max-width: 100%;
+			width: 500px;
+			height: auto;
+			border-radius: .4em;
+		}
+	}
+	
+	.text{
+		display: inline-block;
+		text-align: left;
+		
+		.date{
+			text-transform: uppercase;
+			padding: 0 1em;
+		}
+	}
+	
+	@include min-screen(960){
+		
+		&:nth-child(odd){		
+			a.linked_image{
+				float: left;
+			}
+
+			.text{
+				float: right;
+			}
+		}
+
+		&:nth-child(even){
+			a.linked_image{
+				float: right;
+			}
+
+			.text{
+				float: left;
+			}
+		}
+	}
+}
+
+
+.index{
+	p.intro{
+		&:before, &:after{
+			display: none;
+		}
+	}
+}
+
+#projects{
+	a.project{
+		width: 10em;
+		display: inline-block;
+		text-decoration: none;
+	}
+}

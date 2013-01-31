@@ -1,0 +1,11 @@
+---
+title: (Hello)
+description: I'm Salim. This site is a personal take on blogging, with a focus on how my projects progress.
+---
+
+#projects
+	- projects.each do |page|
+		- link_to page, :class=>'project' do
+			%img{:src=>'/images/projects/'+page.data["title"].parameterize+'.jpg'}
+			%h4= page.data["title"]
+			%p= page.data["description"]
