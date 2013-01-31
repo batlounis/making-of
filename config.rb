@@ -41,11 +41,18 @@
 activate :automatic_image_sizes
 
 # Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+helpers do
+  def linked_image(image)
+    link = link_to image_path(image), :class=>'linked_image' do
+      image_tag(image)
+    end
+    return link
+  end
+  
+  def projects
+    return sitemap.resources.delete_if{|p| !p.data["order"]}.sort_by!{|p| p.data["order"]}
+  end
+end
 
 set :css_dir, 'stylesheets'
 
