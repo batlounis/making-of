@@ -14,7 +14,7 @@
 			%meta{:property=>'description', :content=>data.page.description}
 			%meta{:property=>'og:description', :content=>data.page.description}
 		= stylesheet_link_tag "normalize", "all"
-		- if !ENV['NOANALYTICS']
+		- if build?
 			:javascript
 				var _gaq = _gaq || [];
 				var pluginUrl = 
