@@ -1,20 +1,8 @@
 ---
 title: Cute Post
-description: This is how I made Cute Post. :-). Enjoy. This is how I made Cute Post. :-). Enjoy.
-order: 1
+description: Easily add typographic style to a small piece of text
+order: 3
 ---
 
-%section
-	.text
-		.date 31 Jan 2012
-		%p=lorem.sentences 3
-	= linked_image 'cute-post-1.jpg'
-
-
-%section
-	.text
-		.date 31 Jan 2012
-		%p=lorem.sentences 3
-	= linked_image 'cute-post-2.jpg'
-
-
+= partial :posts, :locals=>{:name=>'cute-post'}
+	

@@ -1,0 +1,38 @@
+en:
+  hello: Hello
+  projects:
+    cute-post:
+      - date: 19 Nov 2012
+        text: "I showed the app to friends, and the feedback was unanimous. It's cute, but what's the purpose?"
+        image: 'cute-post-2.png'
+      - date: 13 Nov 2012
+        text: "I started this project with one idea: intuitive typography tools. A lot of thought was given to which tools are available, how they are displayed, and how to control them. The app name was Typography Lab."
+        image: 'cute-post-1.jpg'
+    anghami-app:
+      - date: 19 Nov 2012
+        text: "I showed the app to friends, and the feedback was unanimous. It's cute, but what's the purpose?"
+        image: 'search.png'
+      - date: 19 Nov 2012
+        text: "I showed the app to friends, and the feedback was unanimous. It's cute, but what's the purpose?"
+        image: 'home-experiment.jpg'
+      - date: 13 Nov 2012
+        text: "I started this project with one idea: intuitive typography tools. A lot of thought was given to which tools are available, how they are displayed, and how to control them. The app name was Typography Lab."
+        image: 'top-songs.png'
+      - date: 19 Nov 2012
+        text: "I showed the app to friends, and the feedback was unanimous. It's cute, but what's the purpose?"
+        image: 'search.png'
+      - date: 19 Nov 2012
+        text: "I showed the app to friends, and the feedback was unanimous. It's cute, but what's the purpose?"
+        image: 'home-experiment.jpg'
+      - date: 13 Nov 2012
+        text: "I started this project with one idea: intuitive typography tools. A lot of thought was given to which tools are available, how they are displayed, and how to control them. The app name was Typography Lab."
+        image: 'top-songs.png'
+      - date: 19 Nov 2012
+        text: "I showed the app to friends, and the feedback was unanimous. It's cute, but what's the purpose?"
+        image: 'search.png'
+      - date: 19 Nov 2012
+        text: "I showed the app to friends, and the feedback was unanimous. It's cute, but what's the purpose?"
+        image: 'home-experiment.jpg'
+      - date: 13 Nov 2012
+        text: "I started this project with one idea: intuitive typography tools. A lot of thought was given to which tools are available, how they are displayed, and how to control them. The app name was Typography Lab."
+        image: 'top-songs.png'
