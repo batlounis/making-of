@@ -39,9 +39,14 @@
 
 # Automatic image dimensions on image_tag helper
 activate :automatic_image_sizes
+activate :i18n
+
+
 
 # Methods defined in the helpers block are available in templates
 helpers do
+  
+
   def linked_image(image)
     link = link_to image_path(image), :class=>'linked_image' do
       image_tag(image)
@@ -64,6 +69,7 @@ activate :directory_indexes
 
 # Build-specific configuration
 configure :build do
+
   # For example, change the Compass output style for deployment
   # activate :minify_css
 

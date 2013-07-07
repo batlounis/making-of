@@ -1,0 +1,7 @@
+- I18n.t("projects.#{name}").each_with_index do |post, index|
+	%section
+		= linked_image name+'/'+post['image']
+		.text
+			.date= post['date']
+			%p= post['text']
+		

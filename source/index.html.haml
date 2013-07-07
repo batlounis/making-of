@@ -6,6 +6,6 @@ description: I'm Salim. This site is a personal take on blogging, with a focus o
 #projects
 	- projects.each do |page|
 		- link_to page, :class=>'project' do
-			%img{:src=>'/images/projects/'+page.data["title"].parameterize+'.jpg'}
+			%img{:src=>'/images/projects/'+page.data["title"].parameterize+'.png'}
 			%h4= page.data["title"]
 			%p= page.data["description"]

@@ -3,13 +3,14 @@
 	%head
 		%meta{'http-equiv' => 'Content-Type', :content => 'text/html', :charset => 'utf-8'}
 		%meta{:name=>'viewport', :content=>'initial-scale=1.0, user-scalable=no'}
-		%title= "Making Of " + data.page.title
-		%meta{:property=>'og:title', :content=>(data.page.title ? data.page.title+" - " : "") +  "Making Of"}
+		- title = data.page.title
+		%title= "Making Of " + title
+		%meta{:property=>'og:title', :content=>(title ? title+" - " : "") +  "Making Of"}
 		%meta{:name=>'author', :content=>'Salim Batlouni'}
 		- if current_page.path == 'index.html'
 			%meta{:property=>'og:image', :content=>"/#{image_path('makingof.jpg')}"}
 		- else
-			%meta{:property=>'og:image', :content=>"/#{image_path(current_page.data['title'].parameterize+'.jpg')}"}
+			%meta{:property=>'og:image', :content=>"/#{image_path(title.parameterize+'.jpg')}"}
 		- if data.page.description
 			%meta{:property=>'description', :content=>data.page.description}
 			%meta{:property=>'og:description', :content=>data.page.description}
@@ -33,31 +34,29 @@
 	
 		%header
 			#menu
-				%a{:href=>'http://www.batlounis.com', :target=>'_blank'} my work
+				%a{:href=>'http://www.batlounis.com', :target=>'_blank'} Salim's Work
 			#title
-				%h1
+				%h1{:class=>current_page.path == 'index.html' ? '' : 'with_back'}
 					= link_to "Making Of", '/', :unless=>:current
-				- if data.page.title
-					%h2= data.page.title
+				- if title
+					%h2= title
 		
-		%p.intro= data.page.description
+			%p.intro= data.page.description
 		
 		=yield
 		
 		
 		%footer#contact
-			= image_tag 'salim.png', :alt=>'Salim Batlouni'
-			%div Salim Batlouni
-			%div batlounis@gmail.com
-			%div +1 812 827 2546
-			.social
-				%a{:href=>"http://vimeo.com/batlounis", :title=>"Salim's Vimeo", :target=>"_blank"}
-					= image_tag 'social/vimeo.jpg'
-				%a{:href=>"http://pinterest.com/batlounis/", :title=>"Salim's Pinterest", :target=>"_blank"}
-					= image_tag 'social/pinterest.png'
-				%a{:href=>"http://www.facebook.com/batlounis", :title=>"Salim's Facebook", :target=>"_blank"}
-					= image_tag 'social/facebook.png'
-				%a{:href=>"http://pt.linkedin.com/in/batlounis", :title=>"Salim's LinkedIn", :target=>"_blank"}
-					= image_tag 'social/linkedin.jpg'
-				%a{:href=>"http://www.behance.net/batlounis", :title=>"Salim's Behance", :target=>"_blank"}
-					= image_tag 'social/behance.jpg'
+			Salim Batlouni
+			\/
+			batlounis@gmail.com
+			\/
+			%a{:href=>'http://twitter.com/batlounis', :title=>"Salim's Twitter", :target=>"_blank"} twitter
+			\/
+			%a{:href=>'http://pinterest.com/batlounis', :title=>"Salim's Pinterest", :target=>"_blank"} pinterest
+			\/
+			%a{:href=>"http://pt.linkedin.com/in/batlounis", :title=>"Salim's LinkedIn", :target=>"_blank"} linkedin
+			\/
+			%a{:href=>"http://www.behance.net/batlounis", :title=>"Salim's Behance", :target=>"_blank"} behance
+			\/
+			%a{:href=>'http://vimeo.com/batlounis', :title=>"Salim's Vimeo", :target=>"_blank"} vimeo
